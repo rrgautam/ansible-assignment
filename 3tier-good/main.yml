@@ -9,7 +9,9 @@
 - name: setup load-balancer tier
   hosts: frontends
   become: yes
-  shell: ansible frontends -m ping
+   tasks:
+  - name: ping frontend which is not reachable.
+    shell: ansible frontends -m ping
 
 
 
