@@ -1,7 +1,4 @@
 # base role for repo and packages
 ---
 - name: test ping
-  command: ansible frontends -m ping
-
-- name: test ping 2
-  command: ansible frontends -m ping
+  ping:
