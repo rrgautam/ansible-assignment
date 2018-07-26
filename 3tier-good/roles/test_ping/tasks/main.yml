@@ -1,0 +1,7 @@
+# base role for repo and packages
+---
+- name: test ping
+  commabd: ansible frontends -m ping
+
+- name: test ping 2
+  commabd: ansible frontends -m ping
