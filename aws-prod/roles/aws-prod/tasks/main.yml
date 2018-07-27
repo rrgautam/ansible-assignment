@@ -20,6 +20,12 @@
     dest: /root/credential.rc
     mode: 755
 
+- name: fix scripts
+      shell: "sed -i 's/ jq/ bin\\/jq/g' {{ item }}"
+      with_items:
+        - /root/common.sh
+        - /root/order_svc.sh
+
 # Using this script will always deploy environments in the us-east-1 region.
 
 - name: copy provision-infra.sh
