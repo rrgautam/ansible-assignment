@@ -2,30 +2,28 @@
 # tasks file for osp-facts
 - name: create bin directory
   file:
-    path: /root/bin
+    path: ~/bin
     state: directory
 
 - name: copy script to get aws_collect_dependencies
   copy:
     src: aws_collect_dependencies.sh
-    dest: /root/aws_collect_dependencies.sh
+    dest: aws_collect_dependencies.sh
     mode: 755
 
 - name: Execute the aws_collect_dependencies shell script and collect logs
-  shell: aws_collect_dependencies.sh >> aws_collect_dependencies.log
+  shell: aws_collect_dependencies.sh 
 
 - name: copy credential rc
   copy:
     src: credential.rc
-    dest: /root/credential.rc
+    dest: ~/credential.rc
     mode: 755
 
 # Using this script will always deploy environments in the us-east-1 region.
 
 - name: run final command to order instances
-  shell: source /root/credential.rc; /root/order_svc.sh -y -c 'OPENTLC Automation' -i 'Three Tier Application' -t 1
-  args:
-    chdir: /root
+  shell: source credential.rc; order_svc.sh -y -c 'OPENTLC Automation' -i 'Three Tier Application' -t 1
 
 - name: Wait for environments to provision
   pause:
