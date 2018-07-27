@@ -24,12 +24,12 @@
 
 - name: copy provision-infra.sh
   copy:
-    src: provision-infra.sh
-    dest: ~/provision-infra.sh
+    src: provision_infra.sh
+    dest: ~/provision_infra.sh
     mode: 755
 
 - name: Execute the provision command
-  command: sh provision-infra.sh
+  command: sh provision_infra.sh
 
 # - name: run final command to order instances
 #   command: source credential.rc; order_svc.sh -y -c 'OPENTLC Automation' -i 'Three Tier Application' -t 1
