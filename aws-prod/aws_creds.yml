@@ -1,4 +1,4 @@
-- hosts: bastion
+- hosts: tag_AnsibleGroup_bastions
   gather_facts: true
   become: true
   tasks:
@@ -29,27 +29,27 @@
       tower_password: r3dh4t1!
       ssh_key_data: "/root/.ssh/{{ file_to_copy.stdout }}"
       username: ec2-user
-  - name: Update Prod Job template
-    tower_job_template:
-      name: "prod-deploy-3-tier-application"
-      machine_credential: "AWS test1"
-      tower_host: tower1.5f79.example.opentlc.com
-      tower_username: admin
-      tower_password: r3dh4t1!
-      state: present
-      job_type: run
-      playbook: "3tier-good/main.yml"
-      project: "BootcampAssignment"
-  - name: Update Prod Smoke Job template
-    tower_job_template:
-      name: "Smoke test Prod env"
-      machine_credential: "AWS test1"
-      tower_host: tower1.5f79.example.opentlc.com
-      tower_username: admin
-      tower_password: r3dh4t1!
-      state: present
-      job_type: run
-      playbook: site-smoketest-aws.yml
-      project: "BootcampAssignment"
+  # - name: Update Prod Job template
+  #   tower_job_template:
+  #     name: "prod-deploy-3-tier-application"
+  #     machine_credential: "AWS test1"
+  #     tower_host: tower1.5f79.example.opentlc.com
+  #     tower_username: admin
+  #     tower_password: r3dh4t1!
+  #     state: present
+  #     job_type: run
+  #     playbook: "3tier-good/main.yml"
+  #     project: "BootcampAssignment"
+  # - name: Update Prod Smoke Job template
+  #   tower_job_template:
+  #     name: "Smoke test Prod env"
+  #     machine_credential: "AWS test1"
+  #     tower_host: tower1.5f79.example.opentlc.com
+  #     tower_username: admin
+  #     tower_password: r3dh4t1!
+  #     state: present
+  #     job_type: run
+  #     playbook: site-smoketest-aws.yml
+  #     project: "BootcampAssignment"
 
     
