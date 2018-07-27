@@ -24,12 +24,12 @@
 
 - name: copy provision-infra.sh
   copy:
-    src: provision_infra.sh
-    dest: ~/provision_infra.sh
+    src: aws_provision_infra.sh
+    dest: ~/aws_provision_infra.sh
     mode: 755
 
 - name: Execute the provision command
-  command: sh provision_infra.sh
+  command: sh aws_provision_infra.sh
 
 # - name: run final command to order instances
 #   command: source credential.rc; order_svc.sh -y -c 'OPENTLC Automation' -i 'Three Tier Application' -t 1
