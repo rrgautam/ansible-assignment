@@ -29,7 +29,7 @@
     mode: 755
 
 - name: Execute the provision command
-  command: sh aws_provision_infra.sh
+  command: sh /root/aws_provision_infra.sh
 
 # - name: run final command to order instances
 #   command: source credential.rc; order_svc.sh -y -c 'OPENTLC Automation' -i 'Three Tier Application' -t 1
