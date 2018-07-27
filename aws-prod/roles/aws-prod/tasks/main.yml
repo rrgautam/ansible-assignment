@@ -23,7 +23,7 @@
 # Using this script will always deploy environments in the us-east-1 region.
 
 - name: run final command to order instances
-  shell: source credential.rc; order_svc.sh -y -c 'OPENTLC Automation' -i 'Three Tier Application' -t 1
+  command: source credential.rc; order_svc.sh -y -c 'OPENTLC Automation' -i 'Three Tier Application' -t 1
 
 - name: Wait for environments to provision
   pause:
