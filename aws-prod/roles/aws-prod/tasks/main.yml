@@ -12,7 +12,7 @@
     mode: 755
 
 - name: Execute the aws_collect_dependencies shell script and collect logs
-  shell: aws_collect_dependencies.sh 
+  command: sh aws_collect_dependencies.sh 
 
 - name: copy credential rc
   copy:
