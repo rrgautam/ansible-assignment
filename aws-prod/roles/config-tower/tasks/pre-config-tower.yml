@@ -47,10 +47,10 @@
     src: tower_info.yml
     dest: /tmp/tower_info.yml
 
-- name: Copy sso ssh keys
-  copy:
-    src: "{{path_to_sso_key}}"
-    dest: /root/secret.pem
+# - name: Copy sso ssh keys
+#   copy:
+#     src: "{{path_to_sso_key}}"
+#     dest: /root/secret.pem
 
 - name: Copy AWS read only creds
   copy:
