@@ -2,22 +2,22 @@
 # tasks file for osp-facts
 - name: create bin directory
   file:
-    path: ~/bin
+    path: /root/bin
     state: directory
 
 - name: copy script to get aws_collect_dependencies
   copy:
     src: aws_collect_dependencies.sh
-    dest: aws_collect_dependencies.sh
+    dest: /root/aws_collect_dependencies.sh
     mode: 755
 
 - name: Execute the aws_collect_dependencies shell script and collect logs
-  command: sh aws_collect_dependencies.sh 
+  command: sh /root/aws_collect_dependencies.sh 
 
 - name: copy credential rc
   copy:
     src: credential.rc
-    dest: ~/credential.rc
+    dest: /root/credential.rc
     mode: 755
 
 # Using this script will always deploy environments in the us-east-1 region.
@@ -25,7 +25,7 @@
 - name: copy provision-infra.sh
   copy:
     src: aws_provision_infra.sh
-    dest: ~/aws_provision_infra.sh
+    dest: /root/aws_provision_infra.sh
     mode: 755
 
 - name: Execute the provision command
