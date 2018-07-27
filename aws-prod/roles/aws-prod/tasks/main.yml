@@ -22,8 +22,17 @@
 
 # Using this script will always deploy environments in the us-east-1 region.
 
-- name: run final command to order instances
-  cmd: source credential.rc; order_svc.sh -y -c 'OPENTLC Automation' -i 'Three Tier Application' -t 1
+- name: copy provision-infra.sh
+  copy:
+    src: provision-infra.sh
+    dest: ~/provision-infra.sh
+    mode: 755
+
+- name: Execute the provision command
+  command: sh provision-infra.sh
+
+# - name: run final command to order instances
+#   command: source credential.rc; order_svc.sh -y -c 'OPENTLC Automation' -i 'Three Tier Application' -t 1
 
 - name: Wait for environments to provision
   pause:

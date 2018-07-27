@@ -1,0 +1,1 @@
+source credential.rc; order_svc.sh -y -c 'OPENTLC Automation' -i 'Three Tier Application' -t 1 -y
