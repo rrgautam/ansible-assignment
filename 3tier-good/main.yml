@@ -1,9 +1,9 @@
 ---
 
-- hosts: workstation
-  gather_facts: true
-  roles:
-  - name: osp-facts
+# - hosts: workstation
+#   gather_facts: true
+#   roles:
+#   - name: osp-facts
 # Setup front-end load balancer tier
 
 # - name: ping frontend 
