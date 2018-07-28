@@ -9,10 +9,10 @@
     #   - "{{ inventory_hostname }}"
     register: webpage
     tags:
-      - osp.smoke
+      - aws.smoke
 
   - name: Fail if 'Ansible has done its job' is not in the page content
     fail:
     when: "'Ansible has done its job' not in webpage.results[0].content"
     tags:
-      - osp.smoke
+      - aws.smoke
